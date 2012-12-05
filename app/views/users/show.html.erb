@@ -6,8 +6,13 @@
 <p>Connect services:</p>
 <ul>
   <li>
-    <%= link_to 'Facebook', "https://www.facebook.com/dialog/oauth?client_id=132081450279923&redirect_uri=http://localhost:3000/auth/facebook&state=SOME_ARBITRARY_BUT_UNIQUE_STRING&scope=read_stream" %>
+		<% if authorized? %>
+		<p> Authorized with Facebook son </p>
+		<% else %>
+    <%= link_to 'Facebook', 			"https://www.facebook.com/dialog/oauth?client_id=132081450279923&redirect_uri=http://localhost:3000/auth/facebook&state=SOME_ARBITRARY_BUT_UNIQUE_STRING&scope=read_stream" %>
+		<% end %>
   </li>
+	
 </ul>
 
 

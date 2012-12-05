@@ -1,3 +1,4 @@
+require 'open-uri'
 class AuthController < ApplicationController
   def facebook
     if code = params[:code]
@@ -18,5 +19,7 @@ class AuthController < ApplicationController
     else
       redirect_to root_url, :notice => 'Facebook authorization unsuccessful. Please try again.'
     end
+    
+    
   end
 end
